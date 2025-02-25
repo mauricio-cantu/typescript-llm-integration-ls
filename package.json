@@ -1,0 +1,26 @@
+{
+  "name": "typescript-llm-integration-ls",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "workspaces": [
+    "packages/ui/react-ai-quiz"
+  ],
+  "scripts": {
+    "1-text-generation": "node --env-file=.env --no-warnings src/1-text-generation/index.ts",
+    "2-text-stream": "node --env-file=.env --no-warnings src/2-text-stream/index.ts",
+    "3-cli-chat": "node --env-file=.env --no-warnings src/3-cli-chat-with-history/index.ts",
+    "7-obj-gen-img-input": "node --env-file=.env --no-warnings src/7-object-generation-with-image-as-input/index.ts",
+    "ui:ai-quiz": "npm run dev -w packages/ui/react-ai-quiz"
+  },
+  "keywords": [],
+  "author": "Mauricio Cantú",
+  "license": "ISC",
+  "description": "Source of files and examples for the Learning Session about integrating LLMs/AI in Typescript projects.",
+  "dependencies": {
+    "@ai-sdk/google": "^1.1.16",
+    "@ai-sdk/groq": "^1.1.6",
+    "@types/node": "^22.12.0",
+    "ai": "^4.1.11"
+  }
+}
