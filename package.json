@@ -11,6 +11,8 @@
     "2-text-stream": "node --env-file=.env --no-warnings src/2-text-stream/index.ts",
     "3-cli-chat": "node --env-file=.env --no-warnings src/3-cli-chat-with-history/index.ts",
     "7-obj-gen-img-input": "node --env-file=.env --no-warnings src/7-object-generation-with-image-as-input/index.ts",
+    "8-tools": "node --env-file=.env --no-warnings src/8-tools/index.ts",
+    "10-rag": "node --env-file=.env --no-warnings src/10-rag/index.ts",
     "ui:ai-quiz": "npm run dev -w packages/ui/react-ai-quiz"
   },
   "keywords": [],

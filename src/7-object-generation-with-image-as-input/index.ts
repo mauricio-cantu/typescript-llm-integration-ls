@@ -3,31 +3,31 @@ import { generateObject } from "ai";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
+import { gemini2_0 } from "../models.ts";
 
-const jim = process.argv.at(-1) === "jim";
-const filePath = jim ? "./jim-the-office.jpg" : "./eleven-stranger-things.jpg";
+const eiffel = process.argv.at(-1) === "eiffel";
+const filePath = eiffel ? "./eiffel.jpg" : "./cristo-redentor.jpg";
 
 const result = await generateObject({
-  model: google("gemini-1.5-pro-latest"),
+  model: gemini2_0,
   schema: z.object({
-    name: z.string().describe("Name of the character"),
-    show: z.string().describe("Movie or series the character belongs to"),
-    actor: z.string().describe("Actor or actress who plays the character"),
-    age: z.number().describe("Age of the actor"),
-    otherShows: z
-      .array(z.string())
-      .describe("Other movies/shows the actor has appeared in."),
-    country: z.string().describe("Country of origin of the actor"),
+    name: z.string().describe("It's name"),
+    country: z.string().describe("Which country it's located"),
+    city: z.string().describe("Which city it's located"),
+    inaugurationDate: z.string().describe("Date of inauguration"),
+    height: z.string().describe("Its height in meters"),
+    description: z.string().describe("Short story of its creation"),
+    materials: z.array(z.string()).describe("Main materials it's made of")
   }),
   system:
-    "You'll receive an image of a character and you'll have to provide the requested information using that image.",
+    "You'll receive an image of a landmark and you'll have to provide the requested information about it. Final answer must be in Brazilian Portuguese.",
   messages: [
     {
       role: "user",
       content: [
         {
           type: "text",
-          text: "Use this image provide the information requested as per the schema.",
+          text: "Use this image to provide the information requested as per the JSON schema.",
         },
       ],
     },

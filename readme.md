@@ -28,7 +28,7 @@ In `packages/ui` you'll find examples using Vercel's AI SDK to build AI-powered 
 
 Below instructions are for the examples present in `src` directory! For the frontend examples present in `packages/ui`, refer to their specific `README.md` files for detailed context and instructions on how to setup/run them.
 
-- Switch to Node v23. If you have `nvm` installed a simple `nvm use` is enough.
+- Switch to Node v23. If you have `nvm` installed a simple `nvm install` should be enough. It's recommended to be able to run the TS files natively.
 - Rename `.env.example` at the root directory to `.env` and paste your API Keys as values to the env variables (check links at the end to know where to get API keys).
 - Install the dependencies with `npm i`.
 
@@ -37,10 +37,6 @@ You're ready to go!
 In `package.json` there are already individual scripts to run each example, but of course you can also run them through `node` directly. In this case don't forget to indicate the .env file location through `--env-file` flag.
 
 Models are exported from `src/models.ts`. Use the ones already exported or add new ones if you'd like. If you're going to use different models/providers, don't forget to add the necessary API Key in the root `.env` file (check links at the end to know where to get API keys).
-
-## Node version
-
-As this project was made for study/presentation purposes only, it was set up using Node v23 (as in the `.nvmrc` file) to allow some useful experimental features during development such as native TypeScript support.
 
 ## Useful links and resources
 
