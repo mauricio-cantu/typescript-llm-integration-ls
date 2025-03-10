@@ -29,7 +29,7 @@ const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY as string });
 const index = pc.index("demo-index");
 
 // Change this to play around
-const userPrompt = "Where did she study?";
+const userPrompt = "tell me more about her education";
 
 // create embeddings for the user's prompt
 const [promptEmbedding] = await generateEmbeddings([userPrompt]);
@@ -37,7 +37,7 @@ const [promptEmbedding] = await generateEmbeddings([userPrompt]);
 // get similar contents from vector db
 const relevantEmbeddings = await index.query({
   vector: promptEmbedding,
-  topK: 2, // 2 most relevant
+  topK: 3, // 2 most relevant
   includeMetadata: true, // so we can take the actual chunk of text of that embedding
 });
 
