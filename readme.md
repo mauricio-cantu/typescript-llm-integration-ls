@@ -5,13 +5,14 @@ This repo contains the source files and examples for the Learning Session "Integ
 Some of the topics presented:
 
 - Prompt Engineering
-- RAG
+- Context window/tokens/completions
 - Text generation/streaming
 - Classification/sentiment analysis
 - Image description
-- Structured outputs
+- Structured/typed outputs
 - Image generation
 - Tool calls
+- RAG
 - Embeddings
 - Similarity search
 - Vector data storage/retrieval
@@ -43,7 +44,8 @@ As this project was made for study/presentation purposes only, it was set up usi
 
 ## Useful links and resources
 
+- [Vercel's AI SDK docs](https://sdk.vercel.ai/docs/introduction)
 - [Groq Console](https://console.groq.com/): Some free models to test via API (such as Deepseek and Llama ones)
 - [Google Generative AI](https://ai.google.dev/gemini-api/docs/quickstart): Free Google models to test via API
 - [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources): Repo with a list of free LLM inference resources accessible via API
-- [Vercel's AI SDK docs](https://sdk.vercel.ai/docs/introduction)
+- Vector DBs with free plans: [Pinecone](https://www.pinecone.io/), [Chroma](https://docs.trychroma.com/docs/overview/introduction), [pgvector (vector extension for Postgres)](https://github.com/pgvector/pgvector)

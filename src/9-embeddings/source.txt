@@ -1,0 +1,52 @@
+Emily Carter – AI Researcher & Entrepreneur
+
+Location: San Francisco, CA
+Email: emily.carter@example.com
+Website: www.emilycarter.ai
+Twitter: @emily_carter_ai
+Phone: (555) 123-4567
+
+About:
+Emily Carter is a renowned AI researcher and entrepreneur, known for her groundbreaking work in natural language processing (NLP) and machine learning ethics. With over a decade of experience in AI development, she has led multiple projects focused on making AI systems more transparent, explainable, and unbiased.
+
+Education:
+
+PhD in Computer Science – Stanford University (2015)
+MSc in Artificial Intelligence – MIT (2012)
+BSc in Computer Science – UC Berkeley (2010)
+Professional Experience:
+
+Founder & CEO – NeuralMind AI (2020 - Present)
+
+Built an AI-powered search engine that enhances academic research by retrieving the most relevant studies based on semantic meaning.
+Developed a RAG-based system to process and summarize vast amounts of research papers efficiently.
+Senior AI Researcher – OpenAI (2017 - 2020)
+
+Led a team working on context-aware LLMs, optimizing retrieval-based architectures for AI chatbots.
+Published multiple papers on AI fairness and bias detection in large models.
+Machine Learning Engineer – Google Brain (2015 - 2017)
+
+Worked on improving Transformer-based architectures for language modeling.
+Contributed to the early development of BERT, optimizing its pre-training techniques.
+Projects & Contributions:
+
+AI Ethics Framework – Developed a toolkit for detecting bias in AI-generated content.
+Open-Source NLP Models – Contributed to multiple open-source LLM repositories.
+Keynote Speaker – Frequent speaker at AI conferences like NeurIPS and ICLR.
+Skills:
+
+Natural Language Processing (NLP)
+Machine Learning & Deep Learning
+Data Science & Big Data Processing
+AI Ethics & Explainability
+Information Retrieval & RAG Systems
+Publications & Research:
+
+"Improving Context Windows in LLMs Using RAG Methods" – NeurIPS 2023
+"Bias Detection in AI-Generated Text" – ACL 2022
+"The Future of AI Search: Retrieval-Augmented Generation" – AI Journal 2021
+Interests:
+
+AI Ethics & Responsible AI
+Tech for Social Good
+Creative Applications of Generative AI
