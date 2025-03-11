@@ -1,4 +1,3 @@
-import { google } from "@ai-sdk/google";
 import { generateObject } from "ai";
 import { readFileSync } from "node:fs";
 import path from "node:path";

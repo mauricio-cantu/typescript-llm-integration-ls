@@ -7,7 +7,7 @@ const rl = createInterface({
   output: process.stdout,
 });
 
-let chatHistory: CoreMessage[] = [];
+const chatHistory: CoreMessage[] = [];
 
 function askQuestion() {
   console.log("\n\n");
