@@ -1,5 +1,7 @@
 import { generateText } from "ai";
+import { configDotenv } from "dotenv";
 import { deepSeekR1Groq } from "../models.ts";
+configDotenv();
 
 const askLlm = async (prompt: string) => {
   const response = await generateText({
@@ -10,4 +12,4 @@ const askLlm = async (prompt: string) => {
   return response.text;
 };
 
-askLlm("Quem foi Steve Jobs?").then(console.log);
+askLlm("O que são LLMs?").then(console.log);

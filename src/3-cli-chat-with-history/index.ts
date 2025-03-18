@@ -1,6 +1,12 @@
-import { type CoreMessage, streamText } from "ai";
+import { type CoreMessage, generateText } from "ai";
+import { configDotenv } from "dotenv";
 import { createInterface } from "node:readline";
 import { gemini2_0 } from "../models.ts";
+import { createGithubMCPClient } from "../11-mcp/githubClient.ts";
+configDotenv();
+
+// const githubClient = await createGithubMCPClient();
+// const toolSet = await githubClient.tools();
 
 const rl = createInterface({
   input: process.stdin,
@@ -24,21 +30,24 @@ function askQuestion() {
     };
 
     try {
-      const result = streamText({
+      const result = await generateText({
         model: gemini2_0,
         messages: [...chatHistory, newUserMessage],
+        tools: {
+          // ...toolSet,
+        },
+        maxSteps: 10,
       });
 
-      console.log("\nLLM:");
-      for await (const chunk of result.textStream) {
-        process.stdout.write(chunk);
-      }
+      console.log("\nLLM:\n");
+      console.log(result.text);
 
-      const llmResponseMessage = (await result.response).messages;
+      const llmResponseMessage = result.response.messages;
       chatHistory.push(newUserMessage, ...llmResponseMessage);
+      debugger;
     } catch (error) {
       console.error("Error:", error);
-      process.exit(1);
+      process.exit();
     }
 
     askQuestion();

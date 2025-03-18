@@ -8,30 +8,38 @@
     "packages/ui/nuxt-ai-chat"
   ],
   "scripts": {
-    "1-text-generation": "node --env-file=.env --no-warnings src/1-text-generation/index.ts",
-    "2-text-stream": "node --env-file=.env --no-warnings src/2-text-stream/index.ts",
-    "3-cli-chat": "node --env-file=.env --no-warnings src/3-cli-chat-with-history/index.ts",
-    "4-classification": "node --env-file=.env --no-warnings src/4-classification/index.ts",
-    "7-obj-gen-img-input": "node --env-file=.env --no-warnings src/7-object-generation-with-image-as-input/index.ts",
-    "8-tools": "node --env-file=.env --no-warnings src/8-tools/index.ts",
-    "10-rag": "node --env-file=.env --no-warnings src/10-rag/index.ts",
+    "1-text-generation": "tsx src/1-text-generation/index.ts",
+    "2-text-stream": "tsx src/2-text-stream/index.ts",
+    "3-cli-chat": "tsx src/3-cli-chat-with-history/index.ts",
+    "4-classification": "tsx src/4-classification/index.ts",
+    "5-image-description": "tsx src/5-image-description/index.ts",
+    "6-object-generation": "tsx src/6-object-generation/index.ts",
+    "7-obj-gen-img-input": "tsx src/7-object-generation-with-image-as-input/index.ts",
+    "8-tools": "tsx src/8-tools/index.ts",
+    "9-embeddings": "tsx src/9-embeddings/index.ts",
+    "10-rag": "tsx src/10-rag/index.ts",
+    "11-mcp": "tsx src/11-mcp/client.ts",
     "ui:ai-quiz": "npm run dev -w packages/ui/react-ai-quiz",
     "ui:nuxt-chat": "npm run dev -w packages/ui/nuxt-ai-chat"
   },
   "keywords": [],
-  "author": "Mauricio Cantú",
+  "author": "Mauricio Cantú Jochims",
   "license": "ISC",
   "description": "Source of files and examples for the Learning Session about integrating LLMs/AI in Typescript projects.",
   "dependencies": {
     "@ai-sdk/google": "^1.1.16",
     "@ai-sdk/groq": "^1.1.6",
+    "@modelcontextprotocol/sdk": "^1.7.0",
     "@pinecone-database/pinecone": "^5.1.1",
+    "@smithery/sdk": "^1.0.2",
     "@types/node": "^22.12.0",
-    "ai": "^4.1.11"
+    "ai": "^4.1.11",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "eslint": "^9.22.0",
     "globals": "^16.0.0",
+    "tsx": "^4.19.3",
     "typescript-eslint": "^8.26.1"
   }
 }

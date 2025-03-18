@@ -1,8 +1,11 @@
 import { Pinecone } from "@pinecone-database/pinecone";
-import { embedMany, streamText } from "ai";
+import { embedMany, generateText } from "ai";
 import { deepSeekR1Groq, geminiEmbedding } from "../models.ts";
+import { configDotenv } from "dotenv";
 
-// This example applies RAG based on embeddings created in 9-embeddings/index.ts
+configDotenv();
+
+// This example applies RAG based on embeddings created in 9-embeddings/for-rag.ts
 
 async function generateEmbeddings(textChunks: string[]) {
   const { embeddings } = await embedMany({
@@ -13,15 +16,15 @@ async function generateEmbeddings(textChunks: string[]) {
   return embeddings;
 }
 
-const askLlm = (prompt: string) => {
-  const response = streamText({
+const askLlm = async (prompt: string) => {
+  const response = await generateText({
     model: deepSeekR1Groq,
     prompt,
     system:
       "You're a helpful assistant. Answer the user based on the provided context only. If there's no context provided or you aren't able to answer the question with the provided context, simply answer 'Sorry, I don'k know how to answer this.'.",
   });
 
-  return response.textStream;
+  return response.text;
 };
 
 // pinecone config
@@ -51,8 +54,7 @@ const promptWithContext = `
 Based on the following context: ${relevantTexts.join("\n\n")} \n
 Answer this: ${userPrompt}`;
 
-const llmResponse = askLlm(promptWithContext);
+const llmResponse = await askLlm(promptWithContext);
 
-for await (const responseChunk of llmResponse) {
-  process.stdout.write(responseChunk);
-}
+console.clear();
+console.log("LLM response:\n" + llmResponse);
