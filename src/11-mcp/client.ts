@@ -1,23 +1,24 @@
-import { experimental_createMCPClient, generateText } from "ai";
+import { generateText } from "ai";
 import { configDotenv } from "dotenv";
-import { gemini1_5Pro } from "../models.ts";
-
+import { deepSeekR1Groq } from "../models.ts";
+import { createPuppeteerMCPClient } from "./puppeteerClient.ts";
 configDotenv();
 
-const client = await experimental_createMCPClient({
-  transport: {
-    type: "stdio",
-    command: "npx",
-    args: ["tsx", "src/11-mcp/server.ts"],
-  },
-});
+// const client = await experimental_createMCPClient({
+//   transport: {
+//     type: "stdio",
+//     command: "npx",
+//     args: ["tsx", "src/11-mcp/server.ts"],
+//   },
+// });
+const client = await createPuppeteerMCPClient();
 const tools = await client.tools();
 
 const response = await generateText({
-  model: gemini1_5Pro,
+  model: deepSeekR1Groq,
   tools,
-  maxSteps: 2,
-  prompt: "How many public repos does mauricio-cantu have?",
+  maxSteps: 10,
+  prompt: "Visit Google and take a screenshot",
 });
 
 console.log(response.text);

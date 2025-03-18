@@ -2,7 +2,7 @@ import { type CoreMessage, generateText } from "ai";
 import { configDotenv } from "dotenv";
 import { createInterface } from "node:readline";
 import { gemini2_0 } from "../models.ts";
-import { createGithubMCPClient } from "../11-mcp/githubClient.ts";
+import { createGithubMCPClient } from "../11-mcp/smitheryGithubClient.ts";
 configDotenv();
 
 // const githubClient = await createGithubMCPClient();
