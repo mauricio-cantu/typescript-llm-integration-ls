@@ -2,11 +2,15 @@ import { type CoreMessage, generateText } from "ai";
 import { configDotenv } from "dotenv";
 import { createInterface } from "node:readline";
 import { gemini2_0 } from "../models.ts";
-import { createGithubMCPClient } from "../11-mcp/smitheryGithubClient.ts";
+import { createGithubMCPClient } from "../11-mcp/smitheryClients.ts";
 configDotenv();
 
-// const githubClient = await createGithubMCPClient();
-// const toolSet = await githubClient.tools();
+const githubClient = await createGithubMCPClient();
+const githubTools = await githubClient.tools();
+
+const toolSet = {
+  ...githubTools,
+};
 
 const rl = createInterface({
   input: process.stdin,
@@ -34,7 +38,7 @@ function askQuestion() {
         model: gemini2_0,
         messages: [...chatHistory, newUserMessage],
         tools: {
-          // ...toolSet,
+          ...toolSet,
         },
         maxSteps: 10,
       });
@@ -44,7 +48,6 @@ function askQuestion() {
 
       const llmResponseMessage = result.response.messages;
       chatHistory.push(newUserMessage, ...llmResponseMessage);
-      debugger;
     } catch (error) {
       console.error("Error:", error);
       process.exit();
