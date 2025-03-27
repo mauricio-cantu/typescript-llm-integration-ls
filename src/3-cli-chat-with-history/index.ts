@@ -2,11 +2,22 @@ import { type CoreMessage, generateText } from "ai";
 import { configDotenv } from "dotenv";
 import { createInterface } from "node:readline";
 import { gemini2_0 } from "../models.ts";
-import { createGithubMCPClient } from "../11-mcp/smitheryGithubClient.ts";
+import {
+  createBrasilApiMCPClient,
+  createGithubMCPClient,
+} from "../11-mcp/smitheryClients.ts";
 configDotenv();
 
-// const githubClient = await createGithubMCPClient();
-// const toolSet = await githubClient.tools();
+const githubClient = await createGithubMCPClient();
+const githubTools = await githubClient.tools();
+
+const brasilApiClient = await createBrasilApiMCPClient();
+const brasilApiTools = await brasilApiClient.tools();
+
+const toolSet = {
+  // ...githubTools,
+  ...brasilApiTools,
+};
 
 const rl = createInterface({
   input: process.stdin,
@@ -15,7 +26,7 @@ const rl = createInterface({
 
 const chatHistory: CoreMessage[] = [];
 
-function askQuestion() {
+function chatLoop() {
   console.log("\n\n");
 
   rl.question("> ", async (prompt) => {
@@ -34,7 +45,7 @@ function askQuestion() {
         model: gemini2_0,
         messages: [...chatHistory, newUserMessage],
         tools: {
-          // ...toolSet,
+          ...toolSet,
         },
         maxSteps: 10,
       });
@@ -44,14 +55,13 @@ function askQuestion() {
 
       const llmResponseMessage = result.response.messages;
       chatHistory.push(newUserMessage, ...llmResponseMessage);
-      debugger;
     } catch (error) {
       console.error("Error:", error);
       process.exit();
     }
 
-    askQuestion();
+    chatLoop();
   });
 }
 
-askQuestion();
+chatLoop();

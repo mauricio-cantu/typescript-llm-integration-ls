@@ -8,8 +8,8 @@ const server = new McpServer({
 });
 
 server.tool(
-  "fetch-github-user-data",
-  "Fetch data from a GitHub profile",
+  "get-github-user-data",
+  "Gets information from a GitHub's user",
   { username: z.string() },
   async ({ username }) => {
     const request = await fetch(`https://api.github.com/users/${username}`);

@@ -22,3 +22,18 @@ export const createGithubMCPClient = async () => {
     },
   });
 };
+
+export const createBrasilApiMCPClient = async () => {
+  return await experimental_createMCPClient({
+    transport: {
+      type: "stdio",
+      command: "npx",
+      args: [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@mauricio-cantu/brasil-api-mcp-server",
+      ],
+    },
+  });
+};
