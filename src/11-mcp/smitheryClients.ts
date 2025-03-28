@@ -1,4 +1,5 @@
-import { experimental_createMCPClient } from "ai";
+import { experimental_createMCPClient as createMCPClient } from "ai";
+import { Experimental_StdioMCPTransport as StdioMCPTransport } from "ai/mcp-stdio";
 import { configDotenv } from "dotenv";
 configDotenv();
 
@@ -7,9 +8,8 @@ export const createGithubMCPClient = async () => {
   if (!GH_PAT) {
     throw new Error("Please define GH_PAT in your env file");
   }
-  return await experimental_createMCPClient({
-    transport: {
-      type: "stdio",
+  return await createMCPClient({
+    transport: new StdioMCPTransport({
       command: "npx",
       args: [
         "-y",
@@ -19,14 +19,13 @@ export const createGithubMCPClient = async () => {
         "--config",
         `{"githubPersonalAccessToken":"${GH_PAT}"}`,
       ],
-    },
+    }),
   });
 };
 
 export const createBrasilApiMCPClient = async () => {
-  return await experimental_createMCPClient({
-    transport: {
-      type: "stdio",
+  return await createMCPClient({
+    transport: new StdioMCPTransport({
       command: "npx",
       args: [
         "-y",
@@ -34,6 +33,6 @@ export const createBrasilApiMCPClient = async () => {
         "run",
         "@mauricio-cantu/brasil-api-mcp-server",
       ],
-    },
+    }),
   });
 };
