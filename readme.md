@@ -11,13 +11,13 @@ Some of the topics presented:
 - Image description
 - Structured/typed outputs
 - Image generation
-- Tool calls
-- RAG
 - Embeddings
 - Similarity search
+- RAG
 - Vector data storage/retrieval
-- UI hooks to integrate with LLMs
+- Tool calls
 - MCP (Model Context Protocol)
+- UI hooks to integrate with LLMs
 
 ## Repo structure
 
@@ -47,3 +47,4 @@ Models are exported from `src/models.ts`. Use the ones already exported or add n
 - [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources): Repo with a list of free LLM inference resources accessible via API
 - Vector DBs with free plans: [Pinecone](https://www.pinecone.io/), [Chroma](https://docs.trychroma.com/docs/overview/introduction), [pgvector (vector extension for Postgres)](https://github.com/pgvector/pgvector)
 - MCP servers: [Pulse](https://www.pulsemcp.com/servers), [Smithery](https://smithery.ai/)
+- [Ollama](https://ollama.com/): Run LLMs locally for free

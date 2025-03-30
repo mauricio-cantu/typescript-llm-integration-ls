@@ -15,9 +15,9 @@
     "5-image-description": "tsx src/5-image-description/index.ts",
     "6-object-generation": "tsx src/6-object-generation/index.ts",
     "7-obj-gen-img-input": "tsx src/7-object-generation-with-image-as-input/index.ts",
-    "8-tools": "tsx src/8-tools/index.ts",
-    "9-embeddings": "tsx src/9-embeddings/index.ts",
-    "10-rag": "tsx src/10-rag/index.ts",
+    "8-embeddings": "tsx src/8-embeddings/index.ts",
+    "9-rag": "tsx src/9-rag/index.ts",
+    "10-tools": "tsx src/10-tools/index.ts",
     "11-mcp": "tsx src/11-mcp/client.ts",
     "ui:ai-quiz": "npm run dev -w packages/ui/react-ai-quiz",
     "ui:nuxt-chat": "npm run dev -w packages/ui/nuxt-ai-chat"

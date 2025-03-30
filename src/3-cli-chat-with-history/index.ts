@@ -16,7 +16,7 @@ const brasilApiTools = await brasilApiClient.tools();
 
 const toolSet = {
   // ...githubTools,
-  ...brasilApiTools,
+  // ...brasilApiTools,
 };
 
 const rl = createInterface({

@@ -16,7 +16,7 @@ const vectorDb = embeddings.map((embedding, index) => ({
   embedding,
 }));
 
-const term = "música";
+const term = "doce";
 
 const { embedding: termEmbedding } = await embed({
   model: geminiEmbedding,
