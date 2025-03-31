@@ -5,7 +5,7 @@ import { configDotenv } from "dotenv";
 configDotenv();
 
 // Change this to play around
-const prompt = "Não sei dizer, achei mais ou menos";
+const prompt = "Achei a comida muito ruim!";
 
 const { object } = await generateObject({
   model: gemini2_0,

@@ -63,6 +63,7 @@ export const QuizContextProvider: React.FC<{ children: ReactNode }> = ({
     setQuizPrompt(prompt);
     setIsBuildingQuiz(true);
     try {
+      // ideally this would be in a server action/backend to not expose the API keys in the frontend
       const { object } = await generateObject({
         model: googleModel("gemini-2.0-flash-exp"),
         messages: [

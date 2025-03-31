@@ -10,15 +10,16 @@
   "scripts": {
     "1-text-generation": "tsx src/1-text-generation/index.ts",
     "2-text-stream": "tsx src/2-text-stream/index.ts",
-    "3-cli-chat": "tsx src/3-cli-chat-with-history/index.ts",
     "4-classification": "tsx src/4-classification/index.ts",
     "5-image-description": "tsx src/5-image-description/index.ts",
     "6-object-generation": "tsx src/6-object-generation/index.ts",
     "7-obj-gen-img-input": "tsx src/7-object-generation-with-image-as-input/index.ts",
     "8-embeddings": "tsx src/8-embeddings/index.ts",
+    "9-rag-initial-example": "tsx src/9-rag/example.ts",
     "9-rag": "tsx src/9-rag/index.ts",
     "10-tools": "tsx src/10-tools/index.ts",
     "11-mcp": "tsx src/11-mcp/client.ts",
+    "cli-chat": "tsx src/cli-chat-with-history/index.ts",
     "ui:ai-quiz": "npm run dev -w packages/ui/react-ai-quiz",
     "ui:nuxt-chat": "npm run dev -w packages/ui/nuxt-ai-chat"
   },

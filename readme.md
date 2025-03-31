@@ -1,11 +1,11 @@
 # Learning Session: Integrating LLMs into TypeScript projects
 
-This repo contains the source files and examples for the Learning Session "Integrating LLMs into TypeScript projects: Exploring Vercel's AI SDK".
+This repo contains the source files and examples for the Learning Session "Integrating LLMs/AI into TypeScript projects".
 
 Some of the topics presented:
 
 - Prompt Engineering
-- Context window/tokens/completions
+- Context window/tokens/temperature
 - Text generation/streaming
 - Classification/sentiment analysis
 - Image description

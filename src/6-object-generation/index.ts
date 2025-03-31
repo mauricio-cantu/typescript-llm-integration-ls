@@ -20,4 +20,7 @@ const result = await generateObject({
     "Generate an array of 10 users as the provided JSON schema. Use real names and emails.",
 });
 
+// schema inference
+console.log(result.object[0].fullName);
+
 console.log(JSON.stringify(result.object, null, 2));

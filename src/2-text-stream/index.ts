@@ -12,7 +12,7 @@ const streamLlm = (prompt: string) => {
   return response.textStream;
 };
 
-const streamResponse = streamLlm("Quem é Bill Gates?");
+const streamResponse = streamLlm("Qual é o maior planeta do sistema solar?");
 
 for await (const chunk of streamResponse) {
   process.stdout.write(chunk);

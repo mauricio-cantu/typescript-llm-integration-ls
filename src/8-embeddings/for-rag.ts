@@ -11,6 +11,7 @@ configDotenv();
 const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY as string });
 const index = pc.index("demo-index");
 
+// estrategia simples de quebra de texto, por chunks
 function splitText(text: string, chunkSize = 70, overlap = 20) {
   const words = text.split(" ");
   const chunks: string[] = [];
@@ -37,7 +38,7 @@ const filePath = path.join(import.meta.dirname, "source.txt");
 const source = readFileSync(filePath, "utf-8");
 // content chunks
 const textChunks = splitText(source);
-// embeddings from each chunk [[embeddings from chunk 1], [embeddings from chunk 2], [embeddings from chunk 3], ...]
+// embeddings from each chunk [[embeddings from chunk 1], [embeddings from chunk 2], [embeddings from chunk n], ...]
 const embeddings = await generateEmbeddings(textChunks);
 
 // store embeddings into the vector db along with the actual content (metadata.text) so we can retrieve it later

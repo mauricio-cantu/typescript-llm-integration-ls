@@ -2,7 +2,7 @@ import { generateText, tool } from "ai";
 import console from "console";
 import { configDotenv } from "dotenv";
 import { z } from "zod";
-import { deepSeekR1Groq } from "../models.ts";
+import { deepSeekR1Groq, gemini1_5Pro } from "../models.ts";
 
 configDotenv();
 

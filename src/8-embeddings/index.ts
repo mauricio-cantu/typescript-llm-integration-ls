@@ -4,7 +4,7 @@ import { configDotenv } from "dotenv";
 
 configDotenv();
 
-const values = ["açucar", "gato", "violão"];
+const values = ["gato", "açucar", "violão"];
 
 const { embeddings } = await embedMany({
   model: geminiEmbedding,
@@ -16,7 +16,9 @@ const vectorDb = embeddings.map((embedding, index) => ({
   embedding,
 }));
 
-const term = "doce";
+const term = "ingrediente para receitas doces";
+// instrumento musical
+// felino
 
 const { embedding: termEmbedding } = await embed({
   model: geminiEmbedding,
